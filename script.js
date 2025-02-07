@@ -3,8 +3,8 @@ let canvas, ctx, roseX, roseY, basketX, score, speed, gameRunning;
 function startGame() {
     canvas = document.getElementById("gameCanvas");
     ctx = canvas.getContext("2d");
-    canvas.width = 400;
-    canvas.height = 500;
+    canvas.width = Math.min(window.innerWidth * 0.9, 400);
+    canvas.height = 450;
     canvas.style.display = "block";
 
     roseX = Math.random() * (canvas.width - 50);
@@ -52,7 +52,6 @@ function gameLoop() {
 
     // Check if rose falls off screen
     if (roseY >= canvas.height) {
-        // Game Over if rose falls out
         gameOver();
     }
 
@@ -66,8 +65,8 @@ function moveBasket(event) {
 
 // Mobile support (touch move)
 function touchMoveBasket(event) {
-    let touchX = event.touches[0].clientX;
-    basketX = touchX - 50; // Adjust for basket's width
+    let touchX = event.touches[0].clientX - canvas.getBoundingClientRect().left;
+    basketX = touchX - 50;
     if (basketX < 0) basketX = 0;
     if (basketX > canvas.width - 100) basketX = canvas.width - 100;
 }
