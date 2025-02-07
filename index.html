@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blooming Love - Rose Day</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="romantic-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Animated Happy Rose Day Text -->
+    <div class="rose-day-banner">💖 Happy Rose Day, Aliza! 🌹</div>
+
+    <!-- Floating Rose Petals Effect -->
+    <div class="falling-petals"></div>
+
+    <div class="container">
+        <h1>🌹 Blooming Love for Aliza 🌹</h1>
+        <p>Catch the falling roses and win my love! 💕</p>
+
+        <button class="game-button" onclick="startGame()">🎮 Start Game</button>
+        
+        <div class="game-container">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+
+        <div id="scoreBoard">Score: <span id="score">0</span></div>
+
+        <!-- Pop-up Message -->
+        <div id="popup" class="hidden"></div>
+
+        <!-- Love Letter Surprise -->
+        <div id="love-letter" class="hidden">
+            💌 "Aliza, my love for you is endless. Happy Rose Day!" 💖
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
